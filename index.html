@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veronika Pak — PhD Candidate in Neuroinformatics at McGill University</title>
+  <meta name="description" content="Veronika Pak is a PhD Candidate in Neuroinformatics at McGill University, integrating transcriptomics and neuroimaging data to study neurodegenerative disorders.">
+  <meta name="author" content="Veronika Pak">
+  <meta name="keywords" content="Veronika Pak, neuroinformatics, McGill University, computational neuroscience, neurodegeneration, transcriptomics, neuroimaging">
+  <link rel="canonical" href="https://nikaxpak.github.io/">
+
+  <!-- Open Graph (for LinkedIn, Twitter, etc.) -->
+  <meta property="og:title" content="Veronika Pak — PhD Candidate in Neuroinformatics">
+  <meta property="og:description" content="Integrating transcriptomics and neuroimaging data to study neurodegenerative disorders at McGill University.">
+  <meta property="og:url" content="https://nikaxpak.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nikaxpak.github.io/me.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Veronika Pak — Neuroinformatics at McGill">
+  <meta name="twitter:description" content="PhD Candidate integrating transcriptomics and neuroimaging to study neurodegeneration.">
+  <meta name="twitter:image" content="https://nikaxpak.github.io/me.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Veronika Pak",
+    "alternateName": "Nika Pak",
+    "url": "https://nikaxpak.github.io/",
+    "image": "https://nikaxpak.github.io/me.jpg",
+    "jobTitle": "PhD Candidate in Neuroinformatics",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "McGill University"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/veronika-pak/",
+      "https://scholar.google.com/citations?user=PbfwdfcAAAAJ&hl=en",
+      "https://github.com/nikaxpak/"
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="atom.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --color-bg: #fafaf8;
+      --color-text: #1a1a1a;
+      --color-text-muted: #555;
+      --color-border: #e0e0dc;
+      --color-accent: #1a1a1a;
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'Inter', 'Neue Haas Grotesk Display', 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --nav-height: 64px;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      background: rgba(250, 250, 248, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 100;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    nav.scrolled { border-bottom-color: var(--color-border); }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+      color: var(--color-text);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-logo-dot {
+      width: 14px; height: 14px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 0.55; }
+
+    .nav-contact {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #fff;
+      background: var(--color-accent);
+      border: none;
+      padding: 10px 24px;
+      border-radius: 100px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .nav-contact:hover { transform: scale(1.04); opacity: 0.9; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: calc(var(--nav-height) + 40px) 24px 60px;
+      text-align: center;
+    }
+
+    .hero-greeting {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.15s;
+    }
+
+    .hero-bio {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+      font-weight: 400;
+      color: var(--color-text-muted);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 56px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.35s;
+    }
+
+    .hero-bio a {
+      color: var(--color-text);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .hero-bio a:hover { opacity: 0.6; }
+
+    .hero-image-wrap {
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.55s;
+    }
+
+    .hero-image-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .projects {
+      padding: 80px 48px 120px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .projects-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      border: 1.5px solid var(--color-text);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a.project-card-header {
+      display: block;
+      background: var(--color-text);
+      color: #fff;
+      padding: 12px 18px;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    a.project-card-header:hover { background: #333; }
+
+    a.project-card-image {
+      display: block;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      cursor: pointer;
+      padding: 12px;
+    }
+
+    a.project-card-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      transition: transform 0.4s ease;
+    }
+
+    a.project-card-image:hover img { transform: scale(1.02); }
+
+    .project-card-body {
+      padding: 18px;
+      margin-top: auto;
+    }
+
+    .project-card-desc {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+
+    .footer {
+      border-top: 1px solid var(--color-border);
+      padding: 80px 48px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .footer-left { max-width: 400px; }
+
+    .footer-title {
+      font-family: var(--font-body);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .footer-desc {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--color-text);
+      text-decoration: none;
+      padding: 10px 22px;
+      border: 1.5px solid var(--color-border);
+      border-radius: 100px;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .footer-link:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+    }
+
+    .footer-nav-link {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav-link:hover { color: var(--color-text); }
+
+    .footer-bottom {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copyright {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--color-text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-logo-dot {
+      width: 10px; height: 10px;
+      background: var(--color-accent);
+      border-radius: 50%;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 720px) {
+      nav { padding: 0 24px; gap: 16px; }
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 0.8rem; }
+      .nav-contact { display: none; }
+      .projects { padding: 60px 24px 80px; }
+      .hero { padding-bottom: 40px; }
+      .footer { padding: 60px 24px 36px; }
+      .footer-right { align-items: flex-start; }
+    }
+
+    @media (max-width: 520px) {
+      nav { padding: 0 16px; gap: 12px; }
+      .nav-logo { font-size: 1rem; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 0.75rem; }
+      .nav-contact { padding: 7px 14px; font-size: 0.75rem; }
+      .projects-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="mainNav">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-dot"></span>
+      Veronika Pak
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#publications">publications</a></li>
+      <li><a href="#blog">blog</a></li>
+    </ul>
+    <a href="#contact" class="nav-contact">Contact</a>
+  </nav>
+
+  <section class="hero" id="hero">
+    <h1 class="hero-greeting">Hi, I'm Nika.</h1>
+    <p class="hero-bio">
+      I'm a PhD Candidate in Neuroinformatics at <a href="https://www.mcgill.ca/" target="_blank">McGill University</a>. 
+      I basically integrate transcriptomics and neuroimaging data to study neurodegenerative disorders. 
+      I do a lot of high achiever side quests related to hackathons, open science, and scientific entrepreneurship. 
+      Currently, learning how machines learn (?)
+    </p>
+    <div class="hero-image-wrap">
+      <img src="me.jpg" alt="Veronika Pak" />
+    </div>
+  </section>
+
+  <section class="projects" id="works">
+    <h2 class="projects-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <a href="https://elifesciences.org/articles/89368" target="_blank" class="project-card-header">Whole-Brain Maps of Cell Type Distributions</a>
+        <a href="https://elifesciences.org/articles/89368" target="_blank" class="project-card-image">
+          <img src="project1.png" alt="Whole-brain cell type proportion maps" />
+        </a>
+        <div class="project-card-body">
+          <p class="project-card-desc">Distinctive whole-brain cell types predict tissue damage patterns in thirteen neurodegenerative conditions</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <a href="https://doi.org/10.1101/2025.07.21.665217" target="_blank" class="project-card-header">Whole-Brain Maps of Cell-Cell Communication</a>
+        <a href="https://doi.org/10.1101/2025.07.21.665217" target="_blank" class="project-card-image">
+          <img src="project2.png" alt="Cell-cell communication maps" />
+        </a>
+        <div class="project-card-body">
+          <p class="project-card-desc">Whole-brain cell-cell interaction patterns explain regional tissue damage in neurodegenerative conditions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <h2 class="footer-title">Get In Touch</h2>
+        <p class="footer-desc">
+          Interested in collaborating? I'd love to hear from you.
+        </p>
+        <div class="footer-links">
+          <a href="mailto:veronika.pak@mail.mcgill.ca" class="footer-link">Email</a>
+          <a href="https://scholar.google.com/citations?user=PbfwdfcAAAAJ&hl=en" target="_blank" class="footer-link">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/veronika-pak/" target="_blank" class="footer-link">LinkedIn</a>
+          <a href="https://github.com/nikaxpak/" target="_blank" class="footer-link">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <a href="#about" class="footer-nav-link">about</a>
+        <a href="#experience" class="footer-nav-link">experience</a>
+        <a href="#publications" class="footer-nav-link">publications</a>
+        <a href="#blog" class="footer-nav-link">blog</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">&copy; 2026 Veronika Pak. All rights reserved.</span>
+      <a href="#" class="footer-logo">
+        <span class="footer-logo-dot"></span>
+        Veronika Pak
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+</body>
+</html>
