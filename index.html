@@ -175,7 +175,13 @@
       max-width: 1280px;
       margin: 0 auto;
       position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+      gap: 64px;
+      align-items: start;
     }
+
+    .hero-left { min-width: 0; }
 
     .hero-tag {
       font-family: var(--mono);
@@ -202,7 +208,7 @@
       line-height: 1.02;
       letter-spacing: -0.035em;
       max-width: 18ch;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
       opacity: 0;
       animation: fadeUp 0.9s cubic-bezier(.2,.7,.2,1) forwards 0.15s;
     }
@@ -213,18 +219,16 @@
     }
 
     .hero-sub {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 36px;
-      max-width: 720px;
       font-family: var(--mono);
       font-size: 0.84rem;
       line-height: 1.7;
       color: var(--ink-soft);
       opacity: 0;
       animation: fadeUp 0.9s cubic-bezier(.2,.7,.2,1) forwards 0.35s;
+      max-width: 46ch;
     }
-    .hero-sub p { max-width: 38ch; }
+    .hero-sub p { margin-bottom: 18px; }
+    .hero-sub p:last-child { margin-bottom: 0; }
     .hero-sub a {
       color: var(--ink);
       text-decoration: underline;
@@ -232,6 +236,38 @@
       text-decoration-thickness: 1px;
     }
     .hero-sub a:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+
+    .hero-photo {
+      position: relative;
+      border: 1px solid var(--rule);
+      background: var(--paper-2);
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 1.1s cubic-bezier(.2,.7,.2,1) forwards 0.5s;
+      align-self: start;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
+    }
+    .hero-photo figcaption {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 8px 12px;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+    }
+    .hero-photo figcaption span:last-child { opacity: 0.55; }
 
     /* --- Card system --- */
     .cards {
@@ -285,19 +321,6 @@
 
     /* Profile card */
     .c-profile { grid-column: span 6; }
-    .profile-grid {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 16px;
-      align-items: start;
-    }
-    .profile-photo {
-      width: 100px; height: 100px;
-      border: 1px solid var(--rule);
-      overflow: hidden;
-      background: var(--paper-2);
-    }
-    .profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; }
     .profile-name {
       font-family: var(--display);
       font-size: 1.35rem;
@@ -517,7 +540,15 @@
 
     /* Responsive */
     @media (max-width: 980px) {
-      .hero { padding: 56px 28px 40px; }
+      .hero {
+        padding: 56px 28px 40px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero-photo {
+        max-width: 360px;
+        order: -1;
+      }
       .cards { padding: 0 28px 36px; gap: 16px; }
       .c-pubs, .c-ledger { grid-column: span 12; }
       .footer { padding: 48px 28px 24px; }
@@ -535,15 +566,13 @@
 
     @media (max-width: 560px) {
       .hero h1 { font-size: 2.2rem; }
-      .hero-sub { grid-template-columns: 1fr; gap: 20px; }
+      .hero-photo { max-width: 100%; }
       .topstrip { font-size: 0.62rem; }
       .topstrip-cell { padding: 8px 12px; }
       .topstrip-right .topstrip-cell:first-child { display: none; }
       .docheader { grid-template-columns: 1fr; }
       .docheader > div { border-right: none; border-bottom: 1px solid var(--rule-soft); }
       .docheader > div:last-child { border-bottom: none; }
-      .profile-grid { grid-template-columns: 80px 1fr; }
-      .cites-num { font-size: 3.5rem; }
       .footer-links { grid-template-columns: 1fr; }
     }
   </style>
@@ -573,18 +602,24 @@
 
     <!-- Hero -->
     <section class="hero">
-      <div class="hero-tag">§ 00 — Dossier</div>
-      <h1>
-        Hi, I'm Nika.
-      </h1>
-      <div class="hero-sub">
-        <p>
-          I integrate transcriptomics and neuroimaging data to study neurodegenerative disorders. I do a lot of high achiever side quests related to hackathons, open science, and scientific entrepreneurship.
-        </p>
-        <p>
-          PhD candidate in Neuroinformatics at <a href="https://www.mcgill.ca/" target="_blank" rel="noopener">McGill University</a>, in the <a href="https://www.neuropm-lab.com/" target="_blank" rel="noopener">NeuroPM Lab</a>. Currently, learning how machines learn (?)
-        </p>
+      <div class="hero-left">
+        <div class="hero-tag">§ 00 — Dossier</div>
+        <h1>
+          Hi, I'm Nika.
+        </h1>
+        <div class="hero-sub">
+          <p>
+            I integrate transcriptomics and neuroimaging data to study neurodegenerative disorders. I do a lot of high achiever side quests related to hackathons, open science, and scientific entrepreneurship.
+          </p>
+          <p>
+            PhD candidate in Neuroinformatics at <a href="https://www.mcgill.ca/" target="_blank" rel="noopener">McGill University</a>, in the <a href="https://www.neuropm-lab.com/" target="_blank" rel="noopener">NeuroPM Lab</a>. Currently, learning how machines learn (?)
+          </p>
+        </div>
       </div>
+      <figure class="hero-photo">
+        <img src="me.png" alt="Veronika Pak" />
+        <figcaption><span>Subject — V. Pak</span><span>ID_0001</span></figcaption>
+      </figure>
     </section>
 
     <!-- Dossier cards -->
@@ -597,19 +632,14 @@
           <span class="card-head-id">01 / 02</span>
         </header>
         <div class="card-body">
-          <div class="profile-grid">
-            <div class="profile-photo">
-              <img src="me.png" alt="Veronika Pak" />
-            </div>
-            <div>
-              <div class="profile-name">Veronika Pak</div>
-              <div class="profile-meta">aka Nika · she/her</div>
-              <dl class="profile-kv">
-                <dt>Role</dt><dd>PhD Candidate</dd>
-                <dt>Field</dt><dd>Neuroinformatics</dd>
-                <dt>Lab</dt><dd>NeuroPM, Montreal Neurological Institute</dd>
-              </dl>
-            </div>
+          <div class="profile-text">
+            <div class="profile-name">Veronika Pak</div>
+            <div class="profile-meta">aka Nika · she/her</div>
+            <dl class="profile-kv">
+              <dt>Role</dt><dd>PhD Candidate</dd>
+              <dt>Field</dt><dd>Neuroinformatics</dd>
+              <dt>Lab</dt><dd>NeuroPM, Montreal Neurological Institute</dd>
+            </dl>
           </div>
         </div>
       </article>
