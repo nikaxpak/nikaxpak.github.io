@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Veronika Pak — PhD Candidate in Neuroinformatics at McGill University</title>
-  <meta name="description" content="Veronika Pak is a PhD Candidate in Neuroinformatics at McGill University, integrating transcriptomics and neuroimaging data to study neurodegenerative disorders.">
+  <meta name="description" content="Veronika Pak is a PhD Candidate in Neuroinformatics at McGill University, mapping brain cell type distributions and cell-cell interactions to study neurodegenerative conditions.">
   <meta name="author" content="Veronika Pak">
-  <meta name="keywords" content="Veronika Pak, neuroinformatics, McGill University, computational neuroscience, neurodegeneration, transcriptomics, neuroimaging">
+  <meta name="keywords" content="Veronika Pak, neuroinformatics, McGill University, computational neuroscience, neurodegeneration, transcriptomics, neuroimaging, machine learning">
   <link rel="canonical" href="https://nikaxpak.github.io/">
 
-  <!-- Open Graph (for LinkedIn, Twitter, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Veronika Pak — PhD Candidate in Neuroinformatics">
-  <meta property="og:description" content="Integrating transcriptomics and neuroimaging data to study neurodegenerative disorders at McGill University.">
+  <meta property="og:description" content="Mapping brain cell types and their interactions to study neurodegeneration at McGill University.">
   <meta property="og:url" content="https://nikaxpak.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://nikaxpak.github.io/me.jpg">
+  <meta property="og:image" content="https://nikaxpak.github.io/me.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Veronika Pak — Neuroinformatics at McGill">
-  <meta name="twitter:description" content="PhD Candidate integrating transcriptomics and neuroimaging to study neurodegeneration.">
-  <meta name="twitter:image" content="https://nikaxpak.github.io/me.jpg">
+  <meta name="twitter:description" content="PhD Candidate mapping brain cell types to study neurodegeneration.">
+  <meta name="twitter:image" content="https://nikaxpak.github.io/me.png">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -28,7 +28,7 @@
     "name": "Veronika Pak",
     "alternateName": "Nika Pak",
     "url": "https://nikaxpak.github.io/",
-    "image": "https://nikaxpak.github.io/me.jpg",
+    "image": "https://nikaxpak.github.io/me.png",
     "jobTitle": "PhD Candidate in Neuroinformatics",
     "affiliation": {
       "@type": "Organization",
@@ -45,460 +45,716 @@
   <link rel="icon" type="image/png" href="atom.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,600,700,900&display=swap" rel="stylesheet">
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    
+
     :root {
-      --color-bg: #fafaf8;
-      --color-text: #1a1a1a;
-      --color-text-muted: #555;
-      --color-border: #e0e0dc;
-      --color-accent: #1a1a1a;
-      --font-display: 'Switzer', 'Neue Haas Grotesk Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      --font-body: 'Inter', 'Neue Haas Grotesk Display', 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      --nav-height: 64px;
+      --paper: #f5f6f8;
+      --paper-2: #eaecef;
+      --ink: #0c0d0f;
+      --ink-soft: #2a2d31;
+      --mute: #6a6e74;
+      --rule: #0c0d0f;
+      --rule-soft: #d0d4da;
+      --label-bg: #e4e7ec;
+      --accent: #0c0d0f;
+      --mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      --display: 'Satoshi', 'Neue Haas Grotesk Display', 'Helvetica Neue', Helvetica, sans-serif;
     }
 
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; font-size: 15px; }
 
     body {
-      font-family: var(--font-body);
-      background: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.6;
+      font-family: var(--mono);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
+      font-feature-settings: "ss01", "ss02";
       overflow-x: hidden;
+      background-image:
+        radial-gradient(ellipse at top left, rgba(0,0,0,0.018), transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(0,0,0,0.025), transparent 50%);
     }
 
-    nav {
+    /* Subtle cool-light grain */
+    body::before {
+      content: "";
       position: fixed;
-      top: 0; left: 0; right: 0;
-      height: var(--nav-height);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 48px;
-      background: rgba(250, 250, 248, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      z-index: 100;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease;
+      inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.022 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      pointer-events: none;
+      z-index: 1;
+      mix-blend-mode: multiply;
     }
 
-    nav.scrolled { border-bottom-color: var(--color-border); }
+    .wrap { position: relative; z-index: 2; }
 
-    .nav-logo {
+    /* --- Top strip / nav --- */
+    .topstrip {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      border-bottom: 1px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .topstrip-cell {
+      padding: 10px 18px;
+      border-right: 1px solid rgba(255,255,255,0.15);
+      white-space: nowrap;
+    }
+    .topstrip-cell:last-child { border-right: none; }
+
+    .topstrip-left { display: flex; }
+    .topstrip-right { display: flex; }
+
+    .topstrip a {
+      color: var(--paper);
+      text-decoration: none;
+      transition: background 0.15s;
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-family: var(--font-display);
-      font-size: 1.15rem;
+    }
+    .topstrip a:hover { background: rgba(255,255,255,0.08); }
+
+    .blinker {
+      display: inline-block;
+      width: 7px; height: 7px;
+      background: #9cff9c;
+      border-radius: 50%;
+      margin-right: 8px;
+      animation: blink 1.6s ease-in-out infinite;
+      box-shadow: 0 0 8px rgba(156,255,156,0.6);
+    }
+    @keyframes blink {
+      0%, 60%, 100% { opacity: 1; }
+      80% { opacity: 0.25; }
+    }
+
+    /* --- Document header (between strip and content) --- */
+    .docheader {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      border-bottom: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .docheader > div {
+      padding: 10px 18px;
+      border-right: 1px solid var(--rule-soft);
+    }
+    .docheader > div:last-child { border-right: none; }
+    .docheader strong {
+      color: var(--ink);
+      font-weight: 500;
+      display: block;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      opacity: 0.55;
+      margin-bottom: 3px;
+    }
+
+    /* --- Hero --- */
+    .hero {
+      padding: 80px 48px 64px;
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-tag::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--ink);
+    }
+
+    .hero h1 {
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 6.4vw, 5.25rem);
+      font-weight: 600;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      max-width: 18ch;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.2,.7,.2,1) forwards 0.15s;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .hero-sub {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      max-width: 720px;
+      font-family: var(--mono);
+      font-size: 0.84rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      opacity: 0;
+      animation: fadeUp 0.9s cubic-bezier(.2,.7,.2,1) forwards 0.35s;
+    }
+    .hero-sub p { max-width: 38ch; }
+    .hero-sub a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+    .hero-sub a:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+
+    /* --- Card system --- */
+    .cards {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px 48px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      border: 1px solid var(--rule);
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .card:nth-child(1) { animation-delay: 0.45s; }
+    .card:nth-child(2) { animation-delay: 0.55s; }
+    .card:nth-child(3) { animation-delay: 0.65s; }
+    .card:nth-child(4) { animation-delay: 0.75s; }
+
+    .card-head {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 9px 14px;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-head-id {
+      opacity: 0.5;
+      font-size: 0.62rem;
+    }
+
+    .card-body {
+      padding: 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Profile card */
+    .c-profile { grid-column: span 6; }
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .profile-photo {
+      width: 100px; height: 100px;
+      border: 1px solid var(--rule);
+      overflow: hidden;
+      background: var(--paper-2);
+    }
+    .profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; }
+    .profile-name {
+      font-family: var(--display);
+      font-size: 1.35rem;
       font-weight: 600;
       letter-spacing: -0.02em;
-      color: var(--color-text);
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+    .profile-meta {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--mute);
+      margin-bottom: 14px;
+    }
+    .profile-kv {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 4px 10px;
+    }
+    .profile-kv dt {
+      color: var(--mute);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.62rem;
+      padding-top: 2px;
+    }
+    .profile-kv dd { color: var(--ink); }
+
+    /* Stack card */
+    .c-stack { grid-column: span 6; }
+    .stack-group { margin-bottom: 14px; }
+    .stack-group:last-child { margin-bottom: 0; }
+    .stack-label {
+      display: inline-block;
+      background: var(--label-bg);
+      padding: 3px 9px;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+      border: 1px solid var(--rule-soft);
+    }
+    .stack-items {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    /* Citations card removed */
+
+    /* Research Focus card removed */
+
+    /* Publications card */
+    .c-pubs { grid-column: span 8; }
+    .pub-row {
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--rule-soft);
+      align-items: start;
       text-decoration: none;
+      color: inherit;
+      transition: padding-left 0.2s ease;
+    }
+    .pub-row:last-child { border-bottom: none; }
+    .pub-row:hover {
+      padding-left: 6px;
+      background: linear-gradient(90deg, var(--label-bg) 0%, transparent 40%);
+    }
+    .pub-num {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      color: var(--mute);
+      letter-spacing: 0.08em;
+      padding-top: 3px;
+    }
+    .pub-title {
+      font-family: var(--display);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .pub-meta {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--mute);
+    }
+    .pub-meta em {
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+    .pub-year {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--mute);
+      padding-top: 3px;
       white-space: nowrap;
     }
 
-    .nav-logo-dot {
-      width: 14px; height: 14px;
-      background: var(--color-accent);
-      border-radius: 50%;
-      display: inline-block;
-      flex-shrink: 0;
+    /* Ledger card */
+    .c-ledger { grid-column: span 4; }
+    .ledger-item {
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--rule-soft);
+      transition: padding-left 0.2s ease;
     }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      list-style: none;
+    .ledger-item:last-child { border-bottom: none; }
+    a.ledger-item:hover { padding-left: 6px; }
+    a.ledger-item:hover .ledger-title { color: var(--ink); }
+    .ledger-date {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 4px;
     }
-
-    .nav-links a {
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: var(--color-text);
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      transition: opacity 0.2s;
-    }
-
-    .nav-links a:hover { opacity: 0.55; }
-
-    .nav-contact {
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: #fff;
-      background: var(--color-accent);
-      border: none;
-      padding: 10px 24px;
-      border-radius: 100px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.2s, opacity 0.2s;
-    }
-
-    .nav-contact:hover { transform: scale(1.04); opacity: 0.9; }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: calc(var(--nav-height) + 40px) 24px 60px;
-      text-align: center;
-    }
-
-    .hero-greeting {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 6vw, 4rem);
+    .ledger-title {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--ink);
+      line-height: 1.4;
       font-weight: 500;
-      letter-spacing: -0.04em;
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.15s;
+    }
+    .ledger-note {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--mute);
+      margin-top: 2px;
     }
 
-    .hero-bio {
-      font-family: var(--font-body);
-      font-size: clamp(0.95rem, 1.8vw, 1.05rem);
-      font-weight: 400;
-      color: var(--color-text-muted);
-      max-width: 560px;
-      line-height: 1.75;
-      margin-bottom: 56px;
-      opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.35s;
+    /* Featured work section removed */
+
+    /* Footer / contact */
+    .footer {
+      border-top: 1px solid var(--rule);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 64px 48px 28px;
+      margin-top: 48px;
     }
-
-    .hero-bio a {
-      color: var(--color-text);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      transition: opacity 0.2s;
-    }
-
-    .hero-bio a:hover { opacity: 0.6; }
-
-    .hero-image-wrap {
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      overflow: hidden;
-      opacity: 0;
-      animation: fadeUp 1s ease forwards 0.55s;
-    }
-
-    .hero-image-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .projects {
-      padding: 80px 48px 120px;
-      max-width: 1200px;
+    .footer-grid {
+      max-width: 1280px;
       margin: 0 auto;
-    }
-
-    .projects-title {
-      font-family: var(--font-body);
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      margin-bottom: 48px;
-      text-align: center;
-    }
-
-    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 36px;
-      max-width: 900px;
-      margin: 0 auto;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 64px;
+      align-items: start;
     }
-
-    .project-card {
-      border: 1.5px solid var(--color-text);
-      background: #fff;
-      display: flex;
-      flex-direction: column;
+    .footer-big {
+      font-family: var(--display);
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      line-height: 1.02;
+      margin-bottom: 24px;
     }
-
-    a.project-card-header {
-      display: block;
-      background: var(--color-text);
-      color: #fff;
-      padding: 12px 18px;
-      font-family: var(--font-body);
-      font-size: 0.78rem;
-      font-weight: 500;
+    .footer-sub {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: rgba(244,241,234,0.65);
+      line-height: 1.7;
+      max-width: 44ch;
+    }
+    .footer-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(244,241,234,0.2);
+      border: 1px solid rgba(244,241,234,0.2);
+    }
+    .footer-link {
+      padding: 16px 18px;
+      background: var(--ink);
+      color: var(--paper);
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 0.76rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       transition: background 0.2s;
     }
-
-    a.project-card-header:hover { background: #333; }
-
-    a.project-card-image {
-      display: block;
-      width: 100%;
-      height: 280px;
-      overflow: hidden;
-      background: #fff;
-      border-bottom: 1px solid var(--color-border);
-      cursor: pointer;
-      padding: 12px;
-    }
-
-    a.project-card-image img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-      transition: transform 0.4s ease;
-    }
-
-    a.project-card-image:hover img { transform: scale(1.02); }
-
-    .project-card-body {
-      padding: 18px;
-      margin-top: auto;
-    }
-
-    .project-card-desc {
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: var(--color-text-muted);
-      line-height: 1.65;
-    }
-
-    .footer {
-      border-top: 1px solid var(--color-border);
-      padding: 80px 48px 48px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-
-    .footer-left { max-width: 400px; }
-
-    .footer-title {
-      font-family: var(--font-body);
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-
-    .footer-desc {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .footer-link {
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: var(--color-text);
-      text-decoration: none;
-      padding: 10px 22px;
-      border: 1.5px solid var(--color-border);
-      border-radius: 100px;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-    }
-
-    .footer-link:hover {
-      background: var(--color-accent);
-      border-color: var(--color-accent);
-      color: #fff;
-    }
-
-    .footer-right {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: flex-end;
-    }
-
-    .footer-nav-link {
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      color: var(--color-text-muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-nav-link:hover { color: var(--color-text); }
+    .footer-link:hover { background: rgba(244,241,234,0.08); }
+    .footer-link span:last-child { opacity: 0.5; font-size: 0.9rem; }
 
     .footer-bottom {
-      margin-top: 64px;
-      padding-top: 24px;
-      border-top: 1px solid var(--color-border);
+      max-width: 1280px;
+      margin: 48px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(244,241,234,0.15);
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(244,241,234,0.5);
       flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .footer-copyright {
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      color: var(--color-text-muted);
-    }
-
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--color-text);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .footer-logo-dot {
-      width: 10px; height: 10px;
-      background: var(--color-accent);
-      border-radius: 50%;
+      gap: 12px;
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
+      from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 720px) {
-      nav { padding: 0 24px; gap: 16px; }
-      .nav-links { gap: 20px; }
-      .nav-links a { font-size: 0.8rem; }
-      .nav-contact { display: none; }
-      .projects { padding: 60px 24px 80px; }
-      .hero { padding-bottom: 40px; }
-      .footer { padding: 60px 24px 36px; }
-      .footer-right { align-items: flex-start; }
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero { padding: 56px 28px 40px; }
+      .cards { padding: 0 28px 36px; gap: 16px; }
+      .c-pubs, .c-ledger { grid-column: span 12; }
+      .footer { padding: 48px 28px 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .docheader { grid-template-columns: 1fr 1fr; }
+      .docheader > div:nth-child(2) { border-right: none; }
+      .docheader > div:nth-child(1), .docheader > div:nth-child(2) {
+        border-bottom: 1px solid var(--rule-soft);
+      }
     }
 
-    @media (max-width: 520px) {
-      nav { padding: 0 16px; gap: 12px; }
-      .nav-logo { font-size: 1rem; }
-      .nav-links { gap: 14px; }
-      .nav-links a { font-size: 0.75rem; }
-      .nav-contact { padding: 7px 14px; font-size: 0.75rem; }
-      .projects-grid { grid-template-columns: 1fr; gap: 28px; }
+    @media (max-width: 760px) {
+      .c-profile, .c-stack { grid-column: span 12; }
+    }
+
+    @media (max-width: 560px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero-sub { grid-template-columns: 1fr; gap: 20px; }
+      .topstrip { font-size: 0.62rem; }
+      .topstrip-cell { padding: 8px 12px; }
+      .topstrip-right .topstrip-cell:first-child { display: none; }
+      .docheader { grid-template-columns: 1fr; }
+      .docheader > div { border-right: none; border-bottom: 1px solid var(--rule-soft); }
+      .docheader > div:last-child { border-bottom: none; }
+      .profile-grid { grid-template-columns: 80px 1fr; }
+      .cites-num { font-size: 3.5rem; }
+      .footer-links { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+  <div class="wrap">
 
-  <nav id="mainNav">
-    <a href="#" class="nav-logo">
-      <span class="nav-logo-dot"></span>
-      Veronika Pak
-    </a>
-    <ul class="nav-links">
-      <li><a href="#about">about</a></li>
-      <li><a href="#experience">experience</a></li>
-      <li><a href="#publications">publications</a></li>
-      <li><a href="#blog">blog</a></li>
-    </ul>
-    <a href="#contact" class="nav-contact">Contact</a>
-  </nav>
-
-  <section class="hero" id="hero">
-    <h1 class="hero-greeting">Hi, I'm Nika.</h1>
-    <p class="hero-bio">
-      I'm a PhD Candidate in Neuroinformatics at <a href="https://www.mcgill.ca/" target="_blank">McGill University</a>. 
-      I basically integrate transcriptomics and neuroimaging data to study neurodegenerative disorders. 
-      I do a lot of high achiever side quests related to hackathons, open science, and scientific entrepreneurship. 
-      Currently, learning how machines learn (?)
-    </p>
-    <div class="hero-image-wrap">
-      <img src="me.jpg" alt="Veronika Pak" />
-    </div>
-  </section>
-
-  <section class="projects" id="works">
-    <h2 class="projects-title">Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <a href="https://elifesciences.org/articles/89368" target="_blank" class="project-card-header">Whole-Brain Maps of Cell Type Distributions</a>
-        <a href="https://elifesciences.org/articles/89368" target="_blank" class="project-card-image">
-          <img src="project1.png" alt="Whole-brain cell type proportion maps" />
-        </a>
-        <div class="project-card-body">
-          <p class="project-card-desc">distinctive whole-brain cell types predict tissue damage patterns in thirteen neurodegenerative conditions</p>
-        </div>
+    <!-- Top strip -->
+    <div class="topstrip">
+      <div class="topstrip-left">
+        <div class="topstrip-cell">VP / DOSSIER — 026</div>
+        <div class="topstrip-cell">MTL · QC · CA</div>
       </div>
-      <div class="project-card">
-        <a href="https://doi.org/10.1101/2025.07.21.665217" target="_blank" class="project-card-header">Whole-Brain Maps of Cell-Cell Communication</a>
-        <a href="https://doi.org/10.1101/2025.07.21.665217" target="_blank" class="project-card-image">
-          <img src="project2.png" alt="Cell-cell communication maps" />
-        </a>
-        <div class="project-card-body">
-          <p class="project-card-desc">whole-brain cell-cell interaction patterns explain regional tissue damage in neurodegenerative conditions</p>
-        </div>
+      <div class="topstrip-right">
+        <div class="topstrip-cell"><span class="blinker"></span>Open to collaborations</div>
+        <a class="topstrip-cell" href="mailto:veronika.pak@mail.mcgill.ca">Contact →</a>
       </div>
     </div>
-  </section>
 
-  <footer class="footer" id="contact">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <h2 class="footer-title">Get In Touch</h2>
-        <p class="footer-desc">
-          Interested in collaborating? I'd love to hear from you.
+    <!-- Document subheader -->
+    <div class="docheader">
+      <div><strong>Filed</strong>Apr 2026 / ongoing</div>
+      <div><strong>Classification</strong>Neuroinformatics</div>
+      <div><strong>Affiliation</strong>McGill · NeuroPM Lab</div>
+      <div><strong>Status</strong>PhD Candidate, Y4</div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-tag">§ 00 — Dossier</div>
+      <h1>
+        Hi, I'm Nika.
+      </h1>
+      <div class="hero-sub">
+        <p>
+          I integrate transcriptomics and neuroimaging data to study neurodegenerative disorders. I do a lot of high achiever side quests related to hackathons, open science, and scientific entrepreneurship.
         </p>
+        <p>
+          PhD candidate in Neuroinformatics at <a href="https://www.mcgill.ca/" target="_blank" rel="noopener">McGill University</a>, in the <a href="https://www.neuropm-lab.com/" target="_blank" rel="noopener">NeuroPM Lab</a>. Currently, learning how machines learn (?)
+        </p>
+      </div>
+    </section>
+
+    <!-- Dossier cards -->
+    <section class="cards">
+
+      <!-- Profile -->
+      <article class="card c-profile">
+        <header class="card-head">
+          <span>Profile</span>
+          <span class="card-head-id">01 / 02</span>
+        </header>
+        <div class="card-body">
+          <div class="profile-grid">
+            <div class="profile-photo">
+              <img src="me.png" alt="Veronika Pak" />
+            </div>
+            <div>
+              <div class="profile-name">Veronika Pak</div>
+              <div class="profile-meta">aka Nika · she/her</div>
+              <dl class="profile-kv">
+                <dt>Role</dt><dd>PhD Candidate</dd>
+                <dt>Field</dt><dd>Neuroinformatics</dd>
+                <dt>Lab</dt><dd>NeuroPM, Montreal Neurological Institute</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Stack -->
+      <article class="card c-stack">
+        <header class="card-head">
+          <span>Stack</span>
+          <span class="card-head-id">02 / 02</span>
+        </header>
+        <div class="card-body">
+          <div class="stack-group">
+            <div class="stack-label">Languages</div>
+            <div class="stack-items">Python, R, MATLAB</div>
+          </div>
+          <div class="stack-group">
+            <div class="stack-label">Machine Learning</div>
+            <div class="stack-items">PyTorch, PyTorch Geometric, scikit-learn</div>
+          </div>
+          <div class="stack-group">
+            <div class="stack-label">Research</div>
+            <div class="stack-items">scRNA-seq, cell–cell communication, imaging transcriptomics, structural MRI, fMRI, MEG</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Publications -->
+      <article class="card c-pubs">
+        <header class="card-head">
+          <span>Selected Publications</span>
+          <span class="card-head-id">↗</span>
+        </header>
+        <div class="card-body" style="padding: 4px 18px 14px;">
+
+          <a class="pub-row" href="https://doi.org/10.1101/2025.07.21.665217" target="_blank" rel="noopener">
+            <div class="pub-num">01</div>
+            <div>
+              <div class="pub-title">Whole-brain cell–cell communication maps explain regional tissue damage in neurodegeneration</div>
+              <div class="pub-meta">Pak V., et al. · <em>bioRxiv</em> / under revision · first author</div>
+            </div>
+            <div class="pub-year">2025</div>
+          </a>
+
+          <a class="pub-row" href="https://elifesciences.org/articles/89368" target="_blank" rel="noopener">
+            <div class="pub-num">02</div>
+            <div>
+              <div class="pub-title">Whole-brain maps of cell type distributions predict tissue damage patterns in thirteen neurodegenerative conditions</div>
+              <div class="pub-meta">Pak V., et al. · <em>eLife</em> · first author</div>
+            </div>
+            <div class="pub-year">2024</div>
+          </a>
+
+          <a class="pub-row" href="https://scholar.google.com/citations?user=PbfwdfcAAAAJ&hl=en" target="_blank" rel="noopener">
+            <div class="pub-num">03</div>
+            <div>
+              <div class="pub-title">Resting-state fMRI network segregation and the perception of pain</div>
+              <div class="pub-meta">Pak V., et al. · <em>Network Neuroscience</em> · first author</div>
+            </div>
+            <div class="pub-year">2023</div>
+          </a>
+
+          <a class="pub-row" href="https://scholar.google.com/citations?user=PbfwdfcAAAAJ&hl=en" target="_blank" rel="noopener">
+            <div class="pub-num">04</div>
+            <div>
+              <div class="pub-title">Full list on Google Scholar →</div>
+              <div class="pub-meta">Workshop papers, preprints, co-authored work</div>
+            </div>
+            <div class="pub-year">see all</div>
+          </a>
+
+        </div>
+      </article>
+
+      <!-- Ledger / recent -->
+      <article class="card c-ledger">
+        <header class="card-head">
+          <span>Ledger — Recent</span>
+          <span class="card-head-id">live</span>
+        </header>
+        <div class="card-body" style="padding: 4px 18px 14px;">
+
+          <a class="ledger-item" href="https://douglas.research.mcgill.ca/calendar/entry/572" target="_blank" rel="noopener" style="display:block; text-decoration:none; color:inherit;">
+            <div class="ledger-date">Mar 2026</div>
+            <div class="ledger-title">Invited talk — Douglas CIC Seminar</div>
+            <div class="ledger-note">Whole-brain cell types &amp; interactions in neurodegeneration</div>
+          </a>
+
+          <div class="ledger-item">
+            <div class="ledger-date">Apr 2026</div>
+            <div class="ledger-title">2nd place, Mila Responsible AI for Mental Health hackathon</div>
+            <div class="ledger-note">Closed-loop red-teaming pipeline · F1 0.85</div>
+          </div>
+
+          <div class="ledger-item">
+            <div class="ledger-date">May 2026</div>
+            <div class="ledger-title">Allen Institute Computational Cell Types Workshop</div>
+            <div class="ledger-note">Accepted with travel support</div>
+          </div>
+
+          <div class="ledger-item">
+            <div class="ledger-date">Jul 2026</div>
+            <div class="ledger-title">Poster — AAIC 2026, London</div>
+            <div class="ledger-note">Peer-review selection</div>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-big">Let's talk.</div>
+          <p class="footer-sub">
+            Interested in collaborating? I'd love to hear from you.
+          </p>
+        </div>
         <div class="footer-links">
-          <a href="/cdn-cgi/l/email-protection#3a4c5f48555453515b144a5b517a575b53561457595d53565614595b" class="footer-link">Email</a>
-          <a href="https://scholar.google.com/citations?user=PbfwdfcAAAAJ&hl=en" target="_blank" class="footer-link">Google Scholar</a>
-          <a href="https://www.linkedin.com/in/veronika-pak/" target="_blank" class="footer-link">LinkedIn</a>
-          <a href="https://github.com/nikaxpak/" target="_blank" class="footer-link">GitHub</a>
+          <a class="footer-link" href="mailto:veronika.pak@mail.mcgill.ca"><span>Email</span><span>→</span></a>
+          <a class="footer-link" href="https://scholar.google.com/citations?user=PbfwdfcAAAAJ&hl=en" target="_blank" rel="noopener"><span>Scholar</span><span>↗</span></a>
+          <a class="footer-link" href="https://www.linkedin.com/in/veronika-pak/" target="_blank" rel="noopener"><span>LinkedIn</span><span>↗</span></a>
+          <a class="footer-link" href="https://github.com/nikaxpak/" target="_blank" rel="noopener"><span>GitHub</span><span>↗</span></a>
         </div>
       </div>
-      <div class="footer-right">
-        <a href="#about" class="footer-nav-link">about</a>
-        <a href="#experience" class="footer-nav-link">experience</a>
-        <a href="#publications" class="footer-nav-link">publications</a>
-        <a href="#blog" class="footer-nav-link">blog</a>
+      <div class="footer-bottom">
+        <span>© 2026 V. Pak · Montréal</span>
+        <span>Dossier build · 2026.04</span>
+        <span>Not a real form</span>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copyright">&copy; 2026 Veronika Pak. All rights reserved.</span>
-      <a href="#" class="footer-logo">
-        <span class="footer-logo-dot"></span>
-        Veronika Pak
-      </a>
-    </div>
-  </footer>
+    </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const nav = document.getElementB
+  </div>
+
+  <script>
+    // Live-update the "Filed" date in docheader so it always reads current month
+    (function(){
+      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const d = new Date();
+      const el = document.querySelector('.docheader > div:first-child');
+      if (el) {
+        el.innerHTML = '<strong>Filed</strong>' + months[d.getMonth()] + ' ' + d.getFullYear() + ' / ongoing';
+      }
+    })();
+  </script>
+</body>
+</html>
