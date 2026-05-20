@@ -177,12 +177,17 @@
       position: relative;
       display: grid;
       grid-template-columns: minmax(0, 1fr) 380px;
-      gap: 24px;
+      gap: 48px;
       align-items: start;
       justify-content: center;
     }
 
-    .hero-left { min-width: 0; }
+    .hero-left {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 456px;
+    }
 
     .hero-tag {
       font-family: var(--mono);
@@ -227,7 +232,8 @@
       opacity: 0;
       animation: fadeUp 0.9s cubic-bezier(.2,.7,.2,1) forwards 0.35s;
       max-width: 62ch;
-      margin-top: 80px;
+      margin-top: auto;
+      margin-bottom: 40px;
     }
     .hero-sub p { margin-bottom: 18px; }
     .hero-sub p:last-child { margin-bottom: 0; }
@@ -576,7 +582,8 @@
         max-width: 360px;
         order: -1;
       }
-      .hero-sub { margin-top: 0; }
+      .hero-left { min-height: 0; }
+      .hero-sub { margin-top: 0; margin-bottom: 0; }
       .cards { padding: 0 28px 36px; gap: 16px; }
       .c-pubs, .c-ledger { grid-column: span 12; }
       .footer { padding: 48px 28px 24px; }
@@ -768,9 +775,9 @@
           </div>
 
           <div class="ledger-item">
-            <div class="ledger-date">Mar 2026</div>
+            <div class="ledger-date">Apr 2026</div>
             <div class="ledger-title">2nd place, Mila Responsible AI for Mental Health hackathon</div>
-            <div class="ledger-note">Closed-loop red-teaming pipeline · <a href="https://mila.quebec/en/news/building-safer-ai-for-youth-mental-health-a-national-hackathon-delivers-groundbreaking-results" target="_blank" rel="noopener">Read more</a></div>
+            <div class="ledger-note">Closed-loop red-teaming pipeline · F1 0.85 · <a href="https://mila.quebec/en/news/building-safer-ai-for-youth-mental-health-a-national-hackathon-delivers-groundbreaking-results" target="_blank" rel="noopener">Read more</a></div>
           </div>
 
           <a class="ledger-item" href="https://douglas.research.mcgill.ca/calendar/entry/572" target="_blank" rel="noopener" style="display:block; text-decoration:none; color:inherit;">
