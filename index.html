@@ -172,12 +172,12 @@
     /* --- Hero --- */
     .hero {
       padding: 80px 48px 64px;
-      max-width: 1080px;
+      max-width: 980px;
       margin: 0 auto;
       position: relative;
       display: grid;
       grid-template-columns: minmax(0, 1fr) 380px;
-      gap: 32px;
+      gap: 24px;
       align-items: start;
       justify-content: center;
     }
@@ -227,6 +227,7 @@
       opacity: 0;
       animation: fadeUp 0.9s cubic-bezier(.2,.7,.2,1) forwards 0.35s;
       max-width: 62ch;
+      margin-top: 80px;
     }
     .hero-sub p { margin-bottom: 18px; }
     .hero-sub p:last-child { margin-bottom: 0; }
@@ -431,6 +432,25 @@
 
     /* Ledger card */
     .c-ledger { grid-column: span 4; }
+    .c-ledger .card-body {
+      max-height: 380px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--ink) transparent;
+    }
+    .c-ledger .card-body::-webkit-scrollbar {
+      width: 6px;
+    }
+    .c-ledger .card-body::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .c-ledger .card-body::-webkit-scrollbar-thumb {
+      background: var(--rule-soft);
+      border-radius: 0;
+    }
+    .c-ledger .card-body::-webkit-scrollbar-thumb:hover {
+      background: var(--ink);
+    }
     .ledger-item {
       padding: 12px 0;
       border-bottom: 1px dashed var(--rule-soft);
@@ -460,6 +480,12 @@
       color: var(--mute);
       margin-top: 2px;
     }
+    .ledger-note a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .ledger-note a:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
 
     /* Featured work section removed */
 
@@ -550,6 +576,7 @@
         max-width: 360px;
         order: -1;
       }
+      .hero-sub { margin-top: 0; }
       .cards { padding: 0 28px 36px; gap: 16px; }
       .c-pubs, .c-ledger { grid-column: span 12; }
       .footer { padding: 48px 28px 24px; }
@@ -678,7 +705,7 @@
           <a class="pub-row" href="https://doi.org/10.1101/2025.07.21.665217" target="_blank" rel="noopener">
             <div class="pub-num">01</div>
             <div>
-              <div class="pub-title">Whole-brain cell–cell communication maps explain regional tissue damage in neurodegeneration</div>
+              <div class="pub-title">Whole-Brain Cell-Cell Interaction Axes Explaining Tissue Vulnerability Across the Neurodegenerative Spectrum</div>
               <div class="pub-meta">Pak V., et al. · <em>bioRxiv</em> / under revision · first author</div>
             </div>
             <div class="pub-year">2025</div>
@@ -693,10 +720,10 @@
             <div class="pub-year">2024</div>
           </a>
 
-          <a class="pub-row" href="https://scholar.google.com/citations?user=PbfwdfcAAAAJ&hl=en" target="_blank" rel="noopener">
+          <a class="pub-row" href="https://direct.mit.edu/netn/article/7/4/1248/116630" target="_blank" rel="noopener">
             <div class="pub-num">03</div>
             <div>
-              <div class="pub-title">Resting-state fMRI network segregation and the perception of pain</div>
+              <div class="pub-title">Top-down threat bias in pain perception is predicted by higher segregation between resting-state networks</div>
               <div class="pub-meta">Pak V., et al. · <em>Network Neuroscience</em> · first author</div>
             </div>
             <div class="pub-year">2023</div>
@@ -722,29 +749,35 @@
         </header>
         <div class="card-body" style="padding: 4px 18px 14px;">
 
-          <a class="ledger-item" href="https://douglas.research.mcgill.ca/calendar/entry/572" target="_blank" rel="noopener" style="display:block; text-decoration:none; color:inherit;">
-            <div class="ledger-date">Mar 2026</div>
-            <div class="ledger-title">Invited talk — Douglas CIC Seminar</div>
-            <div class="ledger-note">Whole-brain cell types &amp; interactions in neurodegeneration</div>
-          </a>
-
-          <div class="ledger-item">
-            <div class="ledger-date">Apr 2026</div>
-            <div class="ledger-title">2nd place, Mila Responsible AI for Mental Health hackathon</div>
-            <div class="ledger-note">Closed-loop red-teaming pipeline · F1 0.85</div>
-          </div>
-
-          <div class="ledger-item">
-            <div class="ledger-date">May 2026</div>
-            <div class="ledger-title">Allen Institute Computational Cell Types Workshop</div>
-            <div class="ledger-note">Accepted with travel support</div>
-          </div>
-
           <div class="ledger-item">
             <div class="ledger-date">Jul 2026</div>
             <div class="ledger-title">Poster — AAIC 2026, London</div>
             <div class="ledger-note">Peer-review selection</div>
           </div>
+
+          <div class="ledger-item">
+            <div class="ledger-date">Jun 2026</div>
+            <div class="ledger-title">CIFAR AI Frontiers School: AI Safety Edition</div>
+            <div class="ledger-note">Accepted with travel support · Toronto</div>
+          </div>
+
+          <div class="ledger-item">
+            <div class="ledger-date">May 2026</div>
+            <div class="ledger-title">Allen Institute Computational Cell Types Workshop</div>
+            <div class="ledger-note">Explored cognitive resilience in the SEA-AD dataset in Seattle, WA</div>
+          </div>
+
+          <div class="ledger-item">
+            <div class="ledger-date">Mar 2026</div>
+            <div class="ledger-title">2nd place, Mila Responsible AI for Mental Health hackathon</div>
+            <div class="ledger-note">Closed-loop red-teaming pipeline · <a href="https://mila.quebec/en/news/building-safer-ai-for-youth-mental-health-a-national-hackathon-delivers-groundbreaking-results" target="_blank" rel="noopener">Read more</a></div>
+          </div>
+
+          <a class="ledger-item" href="https://douglas.research.mcgill.ca/calendar/entry/572" target="_blank" rel="noopener" style="display:block; text-decoration:none; color:inherit;">
+            <div class="ledger-date">Mar 2026</div>
+            <div class="ledger-title">Invited talk — Douglas CIC Seminar</div>
+            <div class="ledger-note">Whole-brain cell types &amp; interactions in neurodegeneration</div>
+          </a>
 
         </div>
       </article>
