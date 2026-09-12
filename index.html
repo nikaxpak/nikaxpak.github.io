@@ -63,6 +63,7 @@
       --accent: #0c0d0f;
       --mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
       --display: 'Satoshi', 'Neue Haas Grotesk Display', 'Helvetica Neue', Helvetica, sans-serif;
+      --feature: var(--display);
     }
 
     html { scroll-behavior: smooth; font-size: 15px; }
@@ -119,6 +120,7 @@
 
     .topstrip-left { display: flex; }
     .topstrip-right { display: flex; }
+    .topstrip-right .topstrip-cell { border-right: none; border-left: 1px solid rgba(255,255,255,0.15); }
 
     .topstrip a {
       color: var(--paper);
@@ -128,6 +130,16 @@
       align-items: center;
     }
     .topstrip a:hover { background: rgba(255,255,255,0.08); }
+    .topstrip a:focus-visible {
+      outline: 2px solid #9cff9c;
+      outline-offset: -3px;
+    }
+
+    .nav-link[aria-current="page"] {
+      background: var(--paper);
+      color: var(--ink);
+    }
+    .nav-link[aria-current="page"]:hover { background: var(--paper); }
 
     .blinker {
       display: inline-block;
@@ -209,7 +221,7 @@
     }
 
     .hero h1 {
-      font-family: var(--display);
+      font-family: var(--feature);
       font-size: clamp(2.6rem, 6.4vw, 5.25rem);
       font-weight: 600;
       line-height: 1.02;
@@ -412,7 +424,7 @@
       padding-top: 3px;
     }
     .pub-title {
-      font-family: var(--display);
+      font-family: var(--feature);
       font-size: 1rem;
       font-weight: 500;
       letter-spacing: -0.015em;
@@ -512,7 +524,7 @@
       align-items: start;
     }
     .footer-big {
-      font-family: var(--display);
+      font-family: var(--feature);
       font-size: clamp(2rem, 5vw, 3.75rem);
       font-weight: 600;
       letter-spacing: -0.035em;
@@ -571,6 +583,16 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero h1, .hero-sub, .hero-photo, .card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+      .blinker { animation: none; }
+    }
+
     /* Responsive */
     @media (max-width: 980px) {
       .hero {
@@ -596,14 +618,15 @@
 
     @media (max-width: 760px) {
       .c-profile, .c-stack { grid-column: span 12; }
+      .strip-place { display: none; }
     }
 
     @media (max-width: 560px) {
       .hero h1 { font-size: 2.2rem; }
       .hero-photo { max-width: 100%; }
       .topstrip { font-size: 0.62rem; }
-      .topstrip-cell { padding: 8px 12px; }
-      .topstrip-right .topstrip-cell:first-child { display: none; }
+      .topstrip-cell { padding: 8px 11px; }
+      .strip-status { display: none; }
       .docheader { grid-template-columns: 1fr; }
       .docheader > div { border-right: none; border-bottom: 1px solid var(--rule-soft); }
       .docheader > div:last-child { border-bottom: none; }
@@ -614,14 +637,17 @@
 <body>
   <div class="wrap">
 
-    <!-- Top strip -->
+    <!-- Top strip / navigation -->
     <div class="topstrip">
-      <div class="topstrip-left">
-        <div class="topstrip-cell">VP / DOSSIER — 026</div>
-        <div class="topstrip-cell">MTL · QC · CA</div>
-      </div>
+      <nav class="topstrip-left" aria-label="Main">
+        <a class="topstrip-cell nav-link" href="index.html" aria-current="page">Main</a>
+        <a class="topstrip-cell nav-link" href="about.html">About</a>
+        <a class="topstrip-cell nav-link" href="cv.html">CV</a>
+        <a class="topstrip-cell nav-link" href="blog.html">Blog</a>
+      </nav>
       <div class="topstrip-right">
-        <div class="topstrip-cell"><span class="blinker"></span>Open to collaborations</div>
+        <div class="topstrip-cell strip-place">MTL · QC · CA</div>
+        <div class="topstrip-cell strip-status"><span class="blinker"></span>Open to collaborations</div>
         <a class="topstrip-cell" href="mailto:veronika.pak@mail.mcgill.ca">Contact →</a>
       </div>
     </div>
@@ -630,7 +656,7 @@
     <div class="docheader">
       <div><strong>Filed</strong>Apr 2026 / ongoing</div>
       <div><strong>Classification</strong>Neuroinformatics</div>
-      <div><strong>Affiliation</strong>McGill · NeuroPM Lab</div>
+      <div><strong>Affiliation</strong>McGill · The Neuro</div>
       <div><strong>Status</strong>PhD Candidate, Y4</div>
     </div>
 
