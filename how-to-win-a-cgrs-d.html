@@ -34,6 +34,8 @@
       --rule-soft: #d0d4da;
       --label-bg: #e4e7ec;
       --mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      --body: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+      --ink-body: #16181c;
       --display: 'Satoshi', 'Neue Haas Grotesk Display', 'Helvetica Neue', Helvetica, sans-serif;
       --feature: var(--display);
     }
@@ -144,7 +146,7 @@
 
     /* --- Article --- */
     .article {
-      max-width: 720px;
+      max-width: 860px;
       margin: 0 auto;
       padding: 72px 48px 88px;
     }
@@ -178,27 +180,22 @@
       margin-bottom: 20px;
     }
 
-    .byline {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mute);
-      padding-bottom: 28px;
-      border-bottom: 1px solid var(--rule);
-      margin-bottom: 40px;
+    .titlerule {
+      border-top: 1px solid var(--rule);
+      margin: 30px 0 40px;
     }
 
     .article p {
-      font-family: var(--display);
-      font-size: 1.04rem;
+      font-family: var(--body);
+      font-size: 1.06rem;
       font-weight: 400;
-      line-height: 1.72;
-      color: var(--ink-soft);
+      line-height: 1.75;
+      color: var(--ink-body);
       margin-bottom: 20px;
-      max-width: 68ch;
+      max-width: 80ch;
     }
-    .article p strong { color: var(--ink); font-weight: 700; }
+    .article p strong, .article li strong { color: var(--ink); font-weight: 700; }
+    .article p em, .article li em { color: var(--ink); font-style: italic; }
     .article a {
       color: var(--ink);
       text-decoration: underline;
@@ -219,13 +216,13 @@
       list-style: none;
       margin: 0 0 24px;
       padding: 0;
-      max-width: 68ch;
+      max-width: 80ch;
     }
     .article ul.plain li {
-      font-family: var(--display);
-      font-size: 1.04rem;
+      font-family: var(--body);
+      font-size: 1.06rem;
       line-height: 1.6;
-      color: var(--ink-soft);
+      color: var(--ink-body);
       padding: 8px 0 8px 26px;
       border-bottom: 1px dashed var(--rule-soft);
       position: relative;
@@ -243,7 +240,7 @@
     .contents {
       border: 1px solid var(--rule);
       margin: 8px 0 28px;
-      max-width: 68ch;
+      max-width: 80ch;
     }
     .contents-head {
       background: var(--ink);
@@ -347,15 +344,15 @@
       background: var(--paper-2);
       padding: 16px 18px;
       margin: 22px 0 26px;
-      max-width: 68ch;
+      max-width: 80ch;
     }
     .panel p { margin-bottom: 8px; font-size: 0.98rem; }
     .panel ul { list-style: none; padding: 0; margin: 0; }
     .panel li {
-      font-family: var(--display);
-      font-size: 0.98rem;
+      font-family: var(--body);
+      font-size: 1.0rem;
       line-height: 1.6;
-      color: var(--ink-soft);
+      color: var(--ink-body);
       padding-left: 18px;
       position: relative;
       margin-bottom: 6px;
@@ -502,11 +499,11 @@
     <article class="article">
       <div class="kicker"><a href="blog.html">§ 03 — Blog</a></div>
       <h1>How to win a CGRS D?</h1>
-      <div class="byline">V. Pak · CIHR doctoral funding</div>
+      <div class="titlerule"></div>
 
       <p>I've applied to CIHR doctoral funding twice. Last year, I was in the top 52.57% (276/525) of applicants in my category and didn't get it. This year I was in the top 2.58% (16/621) of applicants.</p>
 
-      <p>You might think I published a paper in Nature in one year or something crazy like that but no. It all comes down to luck and being strategic. Here's my ultra-specific niche advice.</p>
+      <p>You might think I published a paper in Nature in one year or something crazy like that but no. <strong>It all comes down to luck and being strategic.</strong> Here's my ultra-specific niche advice.</p>
 
       <p>Before we start, I want to talk about things we cannot easily change in the span of days:</p>
 
@@ -516,7 +513,7 @@
         <li>Having a strong publication record, including first-authored papers</li>
       </ul>
 
-      <p>Lacking the third one can hurt your chances of getting the award even if you do everything right. However, I had all three when I first applied and still lost. If you have all three, this post is for you since I mostly talk about things you can change in the span of days/weeks to significantly increase your chances.</p>
+      <p>Lacking the third one can hurt your chances of getting the award even if you do everything right. However, I had all three when I first applied and still lost. If you have all three, this post is for you since <em>I mostly talk about things you can change in the span of days/weeks to significantly increase your chances</em>.</p>
 
       <p>I also need to be transparent about things that brutally affect your chances but you can't control whatsoever unless you pull Lee Byung-hun's move from No Other Choice:</p>
 
@@ -554,11 +551,11 @@
 
         <p>I had this exact mindset for years. Did I procrastinate, produce lazy work, or not try hard enough? No. I worked very hard and did what I thought was my best. For example, my supervisor and senior labmates reviewed my proposal in advance. I still won great scholarships, including an FRQ doctoral award. But I realized that for a national competition, it wasn't enough.</p>
 
-        <p>You need to find confidence in yourself to go all-in on an award if you really want it.</p>
+        <p><strong>You need to find confidence in yourself to go all-in on an award if you really want it.</strong></p>
 
         <p>Think outside the box. Be proactive. Set high standards. Plan in advance. Don't settle if you're not satisfied with the end result.</p>
 
-        <p>Once I changed my mindset, my proposal became less generic, and I started finding more creative ways to showcase my leadership in the training expectations. Simply not treating the application like a chore can change the way you prepare your materials.</p>
+        <p>Once I changed my mindset, my proposal became less generic, and I started finding more creative ways to showcase my leadership in the training expectations. <em>Simply not treating the application like a chore can change the way you prepare your materials.</em></p>
 
         <p>If you're too busy, of course, or don't care much, you can just do your best, test the waters to see what happens, and still win. What you already have may be more than enough. But trust me when I say that pushing beyond your usual version of 'best' can make a difference.</p>
       </section>
@@ -566,7 +563,7 @@
       <section id="reviewers">
         <h2><span class="num">02</span><span>Know your reviewers</span></h2>
 
-        <p>Many applicants assume that it's always PROFESSORS and experts in YOUR FIELD who review your application. At the national stage, your reviewers are post-doctoral fellows. CIHR even publishes the membership <a href="https://cihr-irsc.gc.ca/e/39399.html" target="_blank" rel="noopener">lists</a> for its CGRS D review committees. Although they may not be experts in your field, your application will be assigned to one of two multidisciplinary committees based on the scientific area you indicate.</p>
+        <p>Many applicants assume that it's always PROFESSORS and experts in YOUR FIELD who review your application. <strong>At the national stage, your reviewers are post-doctoral fellows.</strong> CIHR even publishes the membership <a href="https://cihr-irsc.gc.ca/e/39399.html" target="_blank" rel="noopener">lists</a> for its CGRS D review committees. Although they may not be experts in your field, your application will be assigned to one of two multidisciplinary committees based on the scientific area you indicate.</p>
 
         <p>Reviewer feedback can give you great advice and raise legitimate questions about your research. Sometimes they may be wrong. Sometimes they are incredibly sweet and may be more understanding of your circumstances because they themselves were students not long ago.</p>
 
@@ -592,7 +589,7 @@
 
         <div class="sublabel">Language</div>
 
-        <p>Now that you know your reviewers are postdoctoral fellows, keep in mind that your application will still be reviewed from a non-specialist perspective. Even though your application will be assigned to the most appropriate multidisciplinary committee, the guidelines explicitly tell reviewers: "<em>Most candidates will be conducting research outside your research specialty. From a non-specialist's perspective, assess the intellectual challenge and excitement of the research in which the candidate will be involved</em>."</p>
+        <p>Now that you know your reviewers are postdoctoral fellows, keep in mind that <strong>your application will still be reviewed from a non-specialist perspective</strong>. Even though your application will be assigned to the most appropriate multidisciplinary committee, the guidelines explicitly tell reviewers: "<em>Most candidates will be conducting research outside your research specialty. From a non-specialist's perspective, assess the intellectual challenge and excitement of the research in which the candidate will be involved</em>."</p>
 
         <p>This is one of the first pieces of advice you'll be given at a university writing centre. You need to make sure the main objectives of your proposal are accessible to people from diverse backgrounds, such as psychology, epidemiology, experimental research, or computational research.</p>
 
@@ -610,7 +607,7 @@
 
         <div class="sublabel">Storytelling</div>
 
-        <p>Another thing that can make your proposal much easier to follow is having a clear story. I once saw a LinkedIn post by <a href="https://www.linkedin.com/in/jeffrey-to/" target="_blank" rel="noopener">Jeffrey To</a>, who helps scientists and startup founders communicate their work more clearly, about a framework that really stuck with me: <strong>And-But-Therefore (ABT)</strong>. <em>AND</em> establishes what we already know, <em>BUT</em> introduces the gap or problem, and <em>THEREFORE</em> explains what the project will do about it. His point was that if you can't summarize your proposal in one ABT sentence, the story may still be too confusing.</p>
+        <p>Another thing that can make your proposal much easier to follow is having a clear story. I once saw a LinkedIn post by <a href="https://www.linkedin.com/in/jeffrey-to/" target="_blank" rel="noopener">Jeffrey To</a>, who helps scientists and startup founders communicate their work more clearly, about a framework that really stuck with me: <strong>And-But-Therefore (ABT)</strong>. <em>AND</em> establishes what we already know, <em>BUT</em> introduces the gap or problem, and <em>THEREFORE</em> explains what the project will do about it. His point was that <em>if you can't summarize your proposal in one ABT sentence, the story may still be too confusing</em>.</p>
 
         <p>Jeffrey gives a really <a href="https://www.linkedin.com/posts/jeffrey-to_heres-the-storytelling-technique-i-used-share-7367184254641807360-BcaI/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACfREJkBhi8nxTiJKNk4J4KbwQM2Tmu25m0" target="_blank" rel="noopener">simple example</a> of how this works:</p>
 
@@ -623,7 +620,7 @@
           </ul>
         </div>
 
-        <p>I find this especially useful for the Background section. It forces you to structure your background around a clear research gap instead of just listing everything you know about the topic.</p>
+        <p>I find this especially useful for the Background section. <em>It forces you to structure your background around a clear research gap instead of just listing everything you know about the topic.</em></p>
 
         <div class="sublabel">Methods</div>
 
@@ -631,7 +628,7 @@
 
         <p>Some supervisors may tell you to be careful about sharing too much detail about unpublished work in scholarship applications or conference abstracts. Yet being too vague backfired on me in the past when I wrote something general like "<em>we'll use a multivariate method to...</em>", but never specified which multivariate method. The reviewers noticed.</p>
 
-        <p>Protect your work but be as specific as possible about what techniques you are going to use and why. Something that seems obvious to you may not be obvious to the reviewers.</p>
+        <p><strong>Protect your work but be as specific as possible about what techniques you are going to use and why.</strong> Something that seems obvious to you may not be obvious to the reviewers.</p>
 
         <p>If you ask AI to write a proposal for you (please don't), notice how it's either too vague and superficial or painfully detailed and verbose. Here too, you need to find a balance.</p>
 
@@ -639,7 +636,7 @@
 
         <div class="sublabel">References</div>
 
-        <p>If you're wondering whether references should be on the same page or on a separate page, they need to fit within the one-page Research Project Summary. One mistake I made in my first application was putting each reference on its own line, which took a lot of space, so I had to squeeze more important parts of the proposal that would have benefited from additional detail. The reviewers also noted that.</p>
+        <p>If you're wondering whether references should be on the same page or on a separate page, <strong>they need to fit within the one-page Research Project Summary</strong>. One mistake I made in my first application was putting each reference on its own line, which took a lot of space, so I had to squeeze more important parts of the proposal that would have benefited from additional detail. The reviewers also noted that.</p>
 
         <p>Last time, I formatted my references as one compact paragraph, which took three lines instead of... eight! Nobody said anything, so I guess it's an acceptable thing to do.</p>
 
@@ -662,11 +659,11 @@
 
         <p>As I've mentioned, I didn't publish a paper in <em>Nature</em> within one year that could explain such a drastic jump in my ranking. The only new thing I published by the time I submitted my second application was one first-author bioRxiv preprint. I already had two first-authored publications before.</p>
 
-        <p>I believe what moved the needle was not my research record, but extracurricular experience. Last year, one reviewer gave me 3.9 for the section "Relevant experience and achievements obtained within and beyond academia" while another gave me 4.7. The reviewer who gave me the lower score encouraged me to contribute more to the community.</p>
+        <p><strong>I believe what moved the needle was not my research record, but extracurricular experience.</strong> Last year, one reviewer gave me 3.9 for the section "Relevant experience and achievements obtained within and beyond academia" while another gave me 4.7. The reviewer who gave me the lower score encouraged me to contribute more to the community.</p>
 
         <p>I was puzzled by that discrepancy in rating. By that time, I'd already been Director of Marketing at McGillXR for two years, helping to organize extended reality hackathons and game development workshops.</p>
 
-        <p>Apparently, being part of one student club may not be enough.</p>
+        <p>Apparently, <em>being part of one student club may not be enough</em>.</p>
 
         <p>So, to beef up your achievements beyond academia, I suggest taking one of two routes: either start something new or take on a major leadership role (depth), or become involved in several communities (breadth). Whatever suits your priorities and personality.</p>
 
@@ -678,7 +675,7 @@
 
         <p>These two narratives (scientific entrepreneurship and open science) became two separate paragraphs in my training expectations essay. Entrepreneurship became part of my 'what I do beyond academia' paragraph, while the sentences about TOSI fit naturally into the section explaining why the Neuro has provided such a strong training environment for me.</p>
 
-        <p>If you have time on your hands, build or join the communities you feel most aligned with. Choose ones you're genuinely passionate about and that can become a complementary part of your narrative, rather than whatever 'sounds cool' or something you picked randomly.</p>
+        <p>If you have time on your hands, build or join the communities you feel most aligned with. <em>Choose ones you're genuinely passionate about and that can become a complementary part of your narrative</em>, rather than whatever 'sounds cool' or something you picked randomly.</p>
       </section>
 
       <section id="ccv">
@@ -688,7 +685,7 @@
 
         <div class="sublabel">Format</div>
 
-        <p>My first piece of advice: take your time and 1) include as many relevant details as you reasonably can instead of leaving things short and self-explanatory, and 2) present the information in a way that is easy to scan and understand.</p>
+        <p>My first piece of advice: take your time and 1) <strong>include as many relevant details as you reasonably can</strong> instead of leaving things short and self-explanatory, and 2) <strong>present the information in a way that is easy to scan and understand</strong>.</p>
 
         <p>CIHR specifically encourages you to include relevant impacts in the Activities section and tells reviewers to assess a broad range of contributions.</p>
 
@@ -742,13 +739,13 @@
 
         <p>Two other things I forgot but added last time were volunteering at the OHBM conference in Montreal and winning the iGEM synthetic biology hackathon at Dalhousie University. What the volunteering actually involved was standing in the Palais des congrès and directing attendees to the right room for a workshop. The iGEM hackathon was a small event with only two competing teams, and the actual iGEM participants came up with the ideas and walked us through the project-development process. They never announced a winning team and said it would be determined later, but I eventually found a $250 Amazon gift card in my inbox.</p>
 
-        <p>As you can see, there were reasons I usually didn't mention these things in my CV, but that doesn't mean they didn't happen or that I didn't contribute. Never lie, but there may be non-obvious things like these that, altogether, can strengthen your application.</p>
+        <p>As you can see, there were reasons I usually didn't mention these things in my CV, but that doesn't mean they didn't happen or that I didn't contribute. <strong>Never lie</strong>, but there may be <em>non-obvious things</em> like these that, altogether, can strengthen your application.</p>
 
         <div class="sublabel">Mentorship</div>
 
         <p>Another area applicants can easily forget about is mentorship. You can include and describe your TA positions here, but think beyond formal teaching. Have you trained an undergraduate student or a new lab member? Helped someone learn a method, coding language, or analysis pipeline? Guided a junior student through a project, poster, or presentation?</p>
 
-        <p>Graduate students often do a lot of informal mentoring without ever calling it mentorship.</p>
+        <p><em>Graduate students often do a lot of informal mentoring without ever calling it mentorship.</em></p>
 
         <p>If you genuinely invested time in someone else's training and development, it deserves to be described in your CCV. Just be specific about what you actually did rather than exaggerating occasional help into formal supervision.</p>
       </section>
@@ -760,7 +757,7 @@
 
         <p>I wouldn't say I was unlucky the first time I applied. I took the fair feedback from my first reviewers seriously, which significantly improved my next application, and this time around, I got very sweet reviewers.</p>
 
-        <p>So if you don't get the award the first time, figure out what could be stronger and try again. You can't choose your reviewers, but you can make sure they have as few reasons as possible to score you down. The stronger every part of your application is, the more you put luck on your side. And I wish you all the best this application cycle! :)</p>
+        <p>So if you don't get the award the first time, figure out what could be stronger and try again. You can't choose your reviewers, but you can make sure they have as few reasons as possible to score you down. <strong>The stronger every part of your application is, the more you put luck on your side.</strong> And I wish you all the best this application cycle! :)</p>
       </section>
 
       <div class="endnote"><a href="blog.html">← Back to blog</a></div>
